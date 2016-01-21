@@ -1,0 +1,264 @@
+html {
+    overflow-y: scroll;
+}
+
+/*
+Setup a basic body
+*/
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+/*
+Header is relative so z-index: 1 guarantees always displayed on top
+*/
+header {
+    background-color: #25AAE2;
+    padding: 2px;
+    text-decoration: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.4);
+}
+
+.myheader {
+    position: absolute;
+    left: 50px;
+    top: 5px;
+}   
+
+/*
+using background color is important to cover the menu
+position absolute isset to cover the whole viewport
+    padding: 52px 10px 10px 10px;
+*/
+#content {
+    background-color: #FFFFFF;
+    padding: 36px 0px 0px 0px;
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+/*     -webkit-box-shadow: -10px 0px 9px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: -10px 0px 9px 0px rgba(0, 0, 0, 0.4);
+    */
+
+/*
+the hamburger button with a little gradient effect
+*/
+#hamburger {
+    border: 1px solid #374C77;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    padding: 3px 4px 3px;
+    position: relative;
+    width: 25px;
+    background: #4569b2;
+    background: -moz-linear-gradient(top, #4569b2 0%, #4062a5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4569b2), color-stop(100%, #4062a5));
+    background: -webkit-linear-gradient(top, #4569b2 0%, #4062a5 100%);
+    background: -o-linear-gradient(top, #4569b2 0%, #4062a5 100%);
+    background: -ms-linear-gradient(top, #4569b2 0%, #4062a5 100%);
+    background: linear-gradient(to bottom, #4569b2 0%, #4062a5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4569b2', endColorstr='#4062a5', GradientType=0);
+}
+
+/*
+The white stripes in the hamburger button
+*/
+#hamburger div {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 2px 2px 2px 2px;
+    height: 2px;
+    margin-top: 3px;
+    width: 90%;
+}
+
+/*
+The navigation container in the background
+*/
+nav {
+    opacity: 0;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    z-index: 0;
+    width: 70%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #3e3c3d;
+    background: -moz-linear-gradient(top, #3e3c3d 0%, #2d2c2d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3e3c3d), color-stop(100%, #2d2c2d));
+    background: -webkit-linear-gradient(top, #3e3c3d 0%, #2d2c2d 100%);
+    background: -o-linear-gradient(top, #3e3c3d 0%, #2d2c2d 100%);
+    background: -ms-linear-gradient(top, #3e3c3d 0%, #2d2c2d 100%);
+    background: linear-gradient(to bottom, #3e3c3d 0%, #2d2c2d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3e3c3d', endColorstr='#2d2c2d', GradientType=0);
+}
+
+/*
+Style the navigation menu
+*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid #222222;
+    border-top: 1px solid #444444;
+    padding: 5px;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*
+The Layer that will be layed over the content
+so that the content is unclickable while menu is shown
+*/
+#contentLayer {
+    display: none;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    z-index: 5;
+}
+
+.qty {
+    width: 15px;
+    height: 25px;
+    text-align: center;
+    background-color:#ffffff;
+    border:0;
+}
+
+.qtyp {
+    width: 10px;
+    height: 25px;
+    text-align: center;
+    background-color:#ffffff;
+    border:0;
+}
+input, textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+input.qtyplus   { width:15px; height:25px; text-align: center; background-color: #5BB85D; color:#ffffff; border:0; text-align: center; padding:0; font-weight:bold;}
+input.qtyminus  { width:15px; height:25px; text-align: center; background-color: #DD8281; color:#ffffff; border:0; text-align: center; padding:0; font-weight:bold;}
+
+input.qtyplusp  { width:10px; height:25px; text-align: center; background-color: #5BB85D; color:#ffffff; border:0; text-align: center; padding:0; font-weight:bold;}
+input.qtyminusp { width:10px; height:25px; text-align: center; background-color: #DD8281; color:#ffffff; border:0; text-align: center; padding:0; font-weight:bold;}
+
+h1 {
+    color:#ffffff;   
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+    background-color: #25AAE2 ;
+}
+
+h2 {
+    color:#ffffff;  
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+    background-color: #03417C;
+}
+
+/* All tables */
+tr:nth-child(odd)   {background-color: #f9f9f9; }
+tr:nth-child(even)  {background-color: #fefefe; }
+
+/* Table 1 - Group match results */
+table.table1 {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-spacing:0;
+}
+
+table.table1 td {
+    padding: 0px 5px 0px 5px;
+}   
+    
+/* Table 2 - Group table */
+table.table2 {
+    border-collapse: collapse;
+    border-spacing:0;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+table.table2 tr:nth-child(1) {background-color: #03417C;  color:#ffffff;}
+table.table2 tr:nth-child(3) {border-bottom: 1px dotted #03417C;}
+table.table2 tr:nth-child(4) {border-bottom: 1px dotted #03417C;}
+
+table.table2 td:nth-child(1) {text-align: left; }
+
+table.table2 td {
+    padding: 5px 5px 5px 5px;
+}
+
+/* Table 3 - 3rd place table */
+table.table3 {
+    border-collapse: collapse;
+    border-spacing:0;
+    width: 100%;
+    text-align: center;
+}
+
+table.table3 tr:nth-child(1) {background-color: #03417C;  color:#ffffff;}
+table.table3 tr:nth-child(5) {border-bottom: 1px dotted #03417C;}
+
+table.table3 td:nth-child(1) {text-align: left; }
+
+table.table3 td {
+    padding: 5px 5px 5px 5px;
+}
+
+/* Table 4 - Knockout match results */
+table.table4 {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-spacing:0;
+}
+
+table.table4 td {
+    padding: 0px 5px 0px 5px;
+}
+
+table.table4 tr:nth-child(2n+5) {background-color: #00ff00;  color:#ffffff;}
+
